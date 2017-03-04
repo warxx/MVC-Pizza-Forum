@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Ninject;
 using SimpleMVC;
 
-namespace PizzaForum.App.DependecyContainer
+namespace PizzaForum.Appp.DependecyContainer
 {
     public class DependencyKernel
     {

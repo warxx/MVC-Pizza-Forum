@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaForum.App.BindingModels
+namespace PizzaForum.Appp.BindingModels
 {
     public class RegisterUserBindingModel
     {

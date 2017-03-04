@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using SimpleHttpServer;
 using SimpleMVC;
 
-namespace PizzaForum.App
+namespace PizzaForum.Appp
 {
     class AppStart
     {
         static void Main()
         {
             HttpServer server = new HttpServer(8081, RouteTable.Routes);
-            MvcEngine.Run(server, "PizzaForum.App");
+            MvcEngine.Run(server, "PizzaForum.Appp");
         }
     }
 }

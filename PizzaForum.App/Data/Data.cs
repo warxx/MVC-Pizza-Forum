@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaForum.App.Data
+namespace PizzaForum.Appp.Data
 {
     public class Data
     {

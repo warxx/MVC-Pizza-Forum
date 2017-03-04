@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SimpleMVC.Interfaces;
 
-namespace PizzaForum.App.Views.Forum
+namespace PizzaForum.Appp.Views.Forum
 {
     public class Register : IRenderable
     {

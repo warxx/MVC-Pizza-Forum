@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ninject.Modules;
-using PizzaForum.App.Data;
-using PizzaForum.App.Data.Contracts;
+using PizzaForum.Appp.Data;
+using PizzaForum.Appp.Data.Contracts;
 
-namespace PizzaForum.App.DependecyContainer
+namespace PizzaForum.Appp.DependecyContainer
 {
     public class Bindings : NinjectModule
     {

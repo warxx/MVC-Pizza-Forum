@@ -5,7 +5,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaForum.App.Models
+namespace PizzaForum.Appp.Models
 {
     public class Category
     {
@@ -15,6 +15,8 @@ namespace PizzaForum.App.Models
         }
 
         public int Id { get; set; }
+
+        public string Name { get; set; }
 
         public virtual ICollection<Topic> Topics { get; set; }
     }

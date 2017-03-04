@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaForum.App.Data.Contracts
+namespace PizzaForum.Appp.Data.Contracts
 {
     public interface IRepository<T>
     {

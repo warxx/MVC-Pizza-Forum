@@ -1,7 +1,7 @@
 using System.Security.AccessControl;
-using PizzaForum.App.Models;
+using PizzaForum.Appp.Models;
 
-namespace PizzaForum.App.Data
+namespace PizzaForum.Appp.Data
 {
     using System;
     using System.Data.Entity;
@@ -11,7 +11,7 @@ namespace PizzaForum.App.Data
     {
         // Your context has been configured to use a 'PizzaForumContext' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // 'PizzaForum.App.Data.PizzaForumContext' database on your LocalDb instance. 
+        // 'PizzaForum.Appp.Data.PizzaForumContext' database on your LocalDb instance. 
         // 
         // If you wish to target a different database and/or database provider, modify the 'PizzaForumContext' 
         // connection string in the application configuration file.

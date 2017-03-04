@@ -4,20 +4,46 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using PizzaForum.App.Data;
-using PizzaForum.App.Data.Contracts;
-using PizzaForum.App.Models;
+using Ninject.Activation;
+using PizzaForum.Appp.Data;
+using PizzaForum.Appp.Data.Contracts;
+using PizzaForum.Appp.Models;
 using SimpleHttpServer.Models;
+using SimpleHttpServer.Utilities;
 
-namespace PizzaForum.App.Utillities
+namespace PizzaForum.Appp.Utillities
 {
     public class AuthenticationManager
     {
-        private static IUnitOfWork data = new UnitOfWork();
+        public static User GetAuthenticatedUser(string sessionId)
+        {
+            User user = Data.Data.Context.Logins.FirstOrDefault(login => login.SessionId == sessionId && login.IsActive)?.User;
+            if (user != null)
+            {
+                ViewBag.Bag["username"] = user.Username;
+            }
 
-        //public static User IsAuthenticated(HttpSession session)
-        //{
-        //    var login = data.
-        //}
+            return user;
+        }
+
+        public static bool IsAuthenticated(HttpSession session)
+        {
+            return Data.Data.Context.Logins
+                .Any(x => x.SessionId == session.Id && x.IsActive);
+        }
+
+        public static void Logout(HttpResponse response, string sessionId)
+        {
+            ViewBag.Bag["username"] = null;
+            var login = Data.Data.Context.Logins
+                .FirstOrDefault(l => l.SessionId == l.SessionId && l.IsActive);
+            login.IsActive = false;
+            Data.Data.Context.SaveChanges();
+
+            var session = SessionCreator.Create();
+
+            var sessionCookie = new Cookie("sessionId", session.Id + "; HttpOnly; path=/");
+            response.Header.AddCookie(sessionCookie);
+        }
     }
 }

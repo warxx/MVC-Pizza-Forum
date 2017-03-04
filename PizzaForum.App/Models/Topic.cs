@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaForum.App.Models
+namespace PizzaForum.Appp.Models
 {
     public class Topic
     {
@@ -21,7 +21,9 @@ namespace PizzaForum.App.Models
 
         public DateTime? PublishDate { get; set; }
 
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
+
+        public virtual Category Category { get; set; }
 
         public virtual ICollection<Reply> Replies { get; set; }
     }

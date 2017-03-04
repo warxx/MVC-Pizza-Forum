@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PizzaForum.App.Data.Contracts;
-using PizzaForum.App.Data.Repositories;
-using PizzaForum.App.Models;
+using PizzaForum.Appp.Data.Contracts;
+using PizzaForum.Appp.Data.Repositories;
+using PizzaForum.Appp.Models;
 
-namespace PizzaForum.App.Data
+namespace PizzaForum.Appp.Data
 {
     public class UnitOfWork : IUnitOfWork
     {

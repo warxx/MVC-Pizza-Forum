@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleHttpServer", "SimpleH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMVC", "SimpleMVC\SimpleMVC.csproj", "{F2EF3059-AA6C-45C8-9DBB-9D36E62AF1B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaForum.App", "PizzaForum.App\PizzaForum.App.csproj", "{5BC003C9-01AE-4341-A373-3577D189E6F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaForum.Appp", "PizzaForum.App\PizzaForum.Appp.csproj", "{5BC003C9-01AE-4341-A373-3577D189E6F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

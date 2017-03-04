@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ninject;
-using PizzaForum.App.Data;
-using PizzaForum.App.Data.Contracts;
-using PizzaForum.App.DependecyContainer;
+using PizzaForum.Appp.Data;
+using PizzaForum.Appp.Data.Contracts;
+using PizzaForum.Appp.DependecyContainer;
 
-namespace PizzaForum.App.Services
+namespace PizzaForum.Appp.Services
 {
     public abstract class Service
     {

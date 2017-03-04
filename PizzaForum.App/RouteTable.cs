@@ -3,7 +3,7 @@ using SimpleHttpServer.Enums;
 using SimpleHttpServer.Models;
 using SimpleMVC.Routers;
 
-namespace PizzaForum.App
+namespace PizzaForum.Appp
 {
     public class RouteTable
     {
@@ -24,7 +24,7 @@ namespace PizzaForum.App
                             var response = new HttpResponse()
                             {
                                 StatusCode = ResponseStatusCode.Ok,
-                                Content = File.ReadAllBytes(@"../../content/images/forum.ico")
+                                Content = File.ReadAllBytes(@"../../content/forum.ico")
                             };
                             response.Header.ContentType = "image/*";
                             response.Header.ContentLength = response.Content.Length.ToString();

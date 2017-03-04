@@ -5,9 +5,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using PizzaForum.App.Data.Contracts;
+using PizzaForum.Appp.Data.Contracts;
 
-namespace PizzaForum.App.Data.Repositories
+namespace PizzaForum.Appp.Data.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {

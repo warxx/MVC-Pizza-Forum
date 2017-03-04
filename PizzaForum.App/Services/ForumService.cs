@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using PizzaForum.App.BindingModels;
-using PizzaForum.App.Data.Contracts;
-using PizzaForum.App.Models;
+using PizzaForum.Appp.BindingModels;
+using PizzaForum.Appp.Data.Contracts;
+using PizzaForum.Appp.Models;
 
-namespace PizzaForum.App.Services
+namespace PizzaForum.Appp.Services
 {
     public class ForumService : Service
     {
@@ -61,5 +61,36 @@ namespace PizzaForum.App.Services
             this.Context.Users.Add(user);
             this.Context.SaveChanges();
         }
+
+        public bool IsLoginValid(LoginBindingModel model)
+        {
+            return this.Context.Users
+                .Any(u =>
+                    (u.Email == model.Credential || u.Username == model.Credential)
+                    && u.Password == model.Password);
+        }
+
+        public User GetCorrespondingUser(LoginBindingModel model)
+        {
+            var user = this.Context.Users
+                .FirstOrDefault(u =>
+                    (u.Email == model.Credential || u.Username == model.Credential)
+                    && u.Password == model.Password);
+            return user;
+        }
+
+        public void LoginUser(User user, string sessionId)
+        {
+            var login = new Login()
+            {
+                SessionId = sessionId,
+                User = user,
+                IsActive = true
+            };
+
+            this.Context.Logins.Add(login);
+            this.Context.SaveChanges();
+        }
     }
+
 }

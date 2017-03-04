@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PizzaForum.App.Models;
+using PizzaForum.Appp.Models;
 
-namespace PizzaForum.App.Data.Contracts
+namespace PizzaForum.Appp.Data.Contracts
 {
     public interface IUnitOfWork
     {
@@ -16,6 +16,8 @@ namespace PizzaForum.App.Data.Contracts
         IRepository<Topic> Topics { get; }
 
         IRepository<Reply> Replies { get; }
+
+        IRepository<Login> Logins { get; }
 
         int SaveChanges();
     }

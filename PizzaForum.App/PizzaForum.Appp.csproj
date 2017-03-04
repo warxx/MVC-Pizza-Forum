@@ -7,8 +7,8 @@
     <ProjectGuid>{5BC003C9-01AE-4341-A373-3577D189E6F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PizzaForum.App</RootNamespace>
-    <AssemblyName>PizzaForum.App</AssemblyName>
+    <RootNamespace>PizzaForum.Appp</RootNamespace>
+    <AssemblyName>PizzaForum.Appp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,9 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppStart.cs" />
+    <Compile Include="BindingModels\EditCategoryBindingModel.cs" />
+    <Compile Include="BindingModels\LoginBindingModel.cs" />
+    <Compile Include="BindingModels\NewCategoryBindingModel.cs" />
+    <Compile Include="BindingModels\NewReplyBindingModel.cs" />
+    <Compile Include="BindingModels\NewTopicBindingModel.cs" />
     <Compile Include="BindingModels\RegisterUserBindingModel.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Data\Contracts\IRepository.cs" />
     <Compile Include="Data\Contracts\IUnitOfWork.cs" />
     <Compile Include="Data\Data.cs" />
@@ -78,10 +86,28 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteTable.cs" />
+    <Compile Include="Services\CategoriesService.cs" />
     <Compile Include="Services\ForumService.cs" />
+    <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\TopicsService.cs" />
     <Compile Include="Utillities\AuthenticationManager.cs" />
+    <Compile Include="ViewBag.cs" />
+    <Compile Include="ViewModels\AllCategoryViewModel.cs" />
+    <Compile Include="ViewModels\AllViewModel.cs" />
+    <Compile Include="ViewModels\DetailsReplyViewModel.cs" />
+    <Compile Include="ViewModels\DetailsViewModel.cs" />
+    <Compile Include="ViewModels\DetailTopicViewModel.cs" />
+    <Compile Include="ViewModels\EditCategoryViewModel.cs" />
+    <Compile Include="ViewModels\TopicsViewModel.cs" />
+    <Compile Include="Views\Categories\All.cs" />
+    <Compile Include="Views\Categories\Edit.cs" />
+    <Compile Include="Views\Categories\New.cs" />
+    <Compile Include="Views\Forum\Login.cs" />
     <Compile Include="Views\Forum\Register.cs" />
+    <Compile Include="Views\Home\Topics.cs" />
+    <Compile Include="Views\Topics\Details.cs" />
+    <Compile Include="Views\Topics\New.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -97,9 +123,7 @@
       <Name>SimpleMVC</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
