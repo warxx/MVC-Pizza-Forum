@@ -12,7 +12,5 @@ namespace PizzaForum.Appp.BindingModels
         public string Content { get; set; }
 
         public string ImageUrl { get; set; }
-
-        public int TopicId { get; set; }
     }
 }

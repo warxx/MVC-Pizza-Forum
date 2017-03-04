@@ -31,7 +31,6 @@ namespace PizzaForum.Appp.Views.Topics
             details = string.Format(details, detailsSb);
 
             string replyDetails = File.ReadAllText(Constants.ContentPath + Constants.DetailsReplyContent);
-            replyDetails = replyDetails.Replace("##TopicId", this.Model.TopicId.ToString());
 
             string footer = File.ReadAllText(Constants.ContentPath + Constants.Footer);
 

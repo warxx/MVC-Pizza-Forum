@@ -127,7 +127,7 @@ namespace PizzaForum.Appp
                         Method = RequestMethod.POST,
                         UrlRegex = @"^/(.+)/(.+)$",
                         Callable = new ControllerRouter().Handle
-                    },
+                    }
                 };
             }
         }

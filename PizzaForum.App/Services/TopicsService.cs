@@ -70,14 +70,14 @@ namespace PizzaForum.Appp.Services
             return detailsRepliesViewModel;
         }
 
-        public void AddNewReply(User user, NewReplyBindingModel model)
+        public void AddNewReply(int topicId, User user, NewReplyBindingModel model)
         {
             var reply = new Reply()
             {
                 Content = model.Content,
                 PublishDate = DateTime.Now,
                 ImageUrl = model.ImageUrl,
-                TopicId = model.TopicId,
+                TopicId = topicId,
                 Author = user
             };
 

@@ -73,7 +73,6 @@ namespace PizzaForum.Appp.Controllers
             var detailRepliesViewModel = service.GetDetailsRepliesVM(id);
             var detailsViewModel = new DetailsViewModel()
             {
-                TopicId = id,
                 TopicVM = detailTopicViewModel,
                 RepliesVM = detailRepliesViewModel
             };
@@ -83,7 +82,8 @@ namespace PizzaForum.Appp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Details(HttpResponse response, HttpSession session, NewReplyBindingModel npbm)
+        public IActionResult Details(int id, HttpResponse response,
+            HttpSession session, NewReplyBindingModel npbm)
         {
             if (!AuthenticationManager.IsAuthenticated(session))
             {
@@ -93,9 +93,9 @@ namespace PizzaForum.Appp.Controllers
 
             var user = AuthenticationManager.GetAuthenticatedUser(session.Id);
 
-            this.service.AddNewReply(user, npbm);
+            this.service.AddNewReply(id, user, npbm);
 
-            this.Redirect(response, $"/topics/details?id={npbm.TopicId}");
+            this.Redirect(response, $"/topics/details?id={id}");
             return null;
         }
     }
